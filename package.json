@@ -2,7 +2,7 @@
   "name": "stringjs",
   "version": "1.0.0",
   "description": "A library that helps manipulate strings in JavaScript, from uppercase to lowercase, via useful features",
-  "main": "index.js",
+  "main": "bundle/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,9 @@
     "lowercase",
     "javascript"
   ],
+  "dependencies": {
+    "rollup": "^2.41.2"
+  },
   "author": "Mattia Erli",
   "license": "ISC"
 }
