@@ -12,8 +12,9 @@
     "lowercase",
     "javascript"
   ],
-  "dependencies": {
-    "rollup": "^2.41.2"
+  "devDependencies": {
+    "rollup": "^2.41.2",
+    "rollup-plugin-uglify": "6.0.4"
   },
   "author": "Mattia Erli",
   "license": "ISC"
