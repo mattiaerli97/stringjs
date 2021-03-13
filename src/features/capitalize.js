@@ -1,3 +1,5 @@
+import { isString, isArray, isFunction, isNumber } from '../utils/index';
+
 export const capitalizeFirst = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1)
 }
@@ -9,7 +11,7 @@ export const capitalizeLast = (str) => {
 
 export const capitalizeByIndex = (str, idx) => {
     const strLength = str.length
-    if (typeof idx === 'number') {
+    if (isNumber(idx)) {
         switch (idx) {
             case 0:
                 return capitalizeFirst(str)
@@ -19,7 +21,7 @@ export const capitalizeByIndex = (str, idx) => {
                 const charToUppercase = str.charAt(idx).toUpperCase()
                 return str.slice(0, idx) + charToUppercase + str.slice(idx + 1, strLength)
         }
-    } else if (typeof idx === 'object' && Array.isArray(idx)) {
+    } else if (isArray(idx)) {
         let s = str
         idx.map((i) => {
             switch (i) {
@@ -36,11 +38,22 @@ export const capitalizeByIndex = (str, idx) => {
             }
         })
         return s
-    } else if (typeof idx === 'function') {
+    } else if (isFunction(idx)) {
         let s = ''
         for (let i = 0; i < str.length; i++) {
             s = s + (idx(i) ? str[i].toUpperCase() : str[i])
         }
         return s
     }
+}
+
+export const capitalizeByLetter = (str, letter) => {
+    let s = ''
+    const machLetter = (i) => {
+        return isString(letter) ? str[i] === letter : isArray(letter) ? letter.includes(str[i]) : isFunction(letter) ? letter(str[i]) : false
+    }
+    for (let i = 0; i < str.length; i++) {
+        s = s + (machLetter(i) ? str[i].toUpperCase() : str[i])
+    }
+    return s
 }
