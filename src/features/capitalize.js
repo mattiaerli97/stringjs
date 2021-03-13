@@ -1,13 +1,11 @@
 import {
   isString, isArray, isFunction, isNumber,
 } from '../utils/index';
+import { sliceAndModifyChar } from '../common/index';
 
-export const capitalizeFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+export const capitalizeFirst = (str) => sliceAndModifyChar(str, true, true);
 
-export const capitalizeLast = (str) => {
-  const strLength = str.length;
-  return str.slice(0, strLength - 1) + str.charAt(strLength - 1).toUpperCase();
-};
+export const capitalizeLast = (str) => sliceAndModifyChar(str, false, true);
 
 export const capitalizeByIndex = (str, idx) => {
   const strLength = str.length;
