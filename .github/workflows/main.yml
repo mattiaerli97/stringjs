@@ -9,5 +9,3 @@ jobs:
       run: npm install
     - name: Run tests
       run: npm run run_test
-      env:
-        CODECOV_TOKEN='55110a37-4bc2-4b42-8799-6e2c9e7098c1'
