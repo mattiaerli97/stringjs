@@ -1,0 +1,6 @@
+jobs:
+  example-job:
+    steps:
+      - name: Run Jest Tests
+      run: npm run run_test
+      

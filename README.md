@@ -4,6 +4,10 @@ StringJs is a library that introduces useful and easy functions to manipulate st
 
 &nbsp;
 
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
+&nbsp;
+
 ## Features
 
 - import this package in your project
