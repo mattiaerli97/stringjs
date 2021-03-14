@@ -62,8 +62,9 @@ export const checkByIndex = (str, idx, isUppercase) => {
       s += (idx(i) ? transformChar(str, i, isUppercase) : str[i]);
     }
     return s;
+  } else {
+    return str;
   }
-  return str;
 };
 
 export const checkAndUpperLower = (str, letter, isUppercase) => {
@@ -76,6 +77,8 @@ export const checkAndUpperLower = (str, letter, isUppercase) => {
       booleanCondition = letter.includes(str[i]);
     } else if (isFunction(letter)) {
       booleanCondition = letter(str[i]);
+    } else {
+      false;
     }
     return booleanCondition;
   };

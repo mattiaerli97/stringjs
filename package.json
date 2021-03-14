@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "rollup": "rollup -c",
-    "lint": "eslint"
+    "lint": "eslint",
+    "run_test": "jest",
+    "run_test_coverage": "jest --coverage"
   },
   "keywords": [
     "strings",
@@ -15,9 +17,12 @@
     "javascript"
   ],
   "devDependencies": {
+    "@babel/preset-env": "^7.13.10",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.1",
+    "jest": "^26.6.3",
     "rollup": "^2.41.2",
     "rollup-plugin-uglify": "6.0.4"
   },
