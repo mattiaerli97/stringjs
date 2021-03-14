@@ -3,7 +3,7 @@ import {
 } from './features/capitalize';
 
 import {
-  deCapitalizeFirst, deCapitalizeLast,
+  deCapitalizeFirst, deCapitalizeLast, deCapitalizeByIndex, deCapitalizeByLetter,
 } from './features/decapitalize';
 
 module.exports = {
@@ -13,4 +13,6 @@ module.exports = {
   capitalizeByLetter,
   deCapitalizeFirst,
   deCapitalizeLast,
+  deCapitalizeByIndex,
+  deCapitalizeByLetter,
 };
