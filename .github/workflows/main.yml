@@ -1,5 +1,9 @@
+name: CI
+on: push
 jobs:
-  example-job:
-    name: Run Jest Tests
-  steps:
-    run: npm run run_test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: npm run run_test
