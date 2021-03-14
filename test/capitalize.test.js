@@ -48,6 +48,6 @@ describe('capitalizeByLetter: ', () => {
   });
 
   test('With String and Object (Not Allowed => Returns Input String)', () => {
-    expect(capitalizeByLetter('test', {})).toBe('aaa');
+    expect(capitalizeByLetter('test', {})).toBe('test');
   });
 })
