@@ -1,8 +1,12 @@
 {
   "name": "stringjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library that helps manipulate strings in JavaScript, from uppercase to lowercase, via useful features",
   "main": "bundle/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattiaerli97/stringjs.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "rollup": "rollup -c",
