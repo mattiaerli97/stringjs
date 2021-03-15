@@ -3,5 +3,6 @@ module.exports = {
     '^.+\\.js?$': 'babel-jest',
   },
   moduleFileExtensions: ['js'],
-  testMatch: ['**/*.test.js']
+  testMatch: ['**/*.test.js'],
+  collectCoverage: true
 };
