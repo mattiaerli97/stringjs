@@ -5,6 +5,7 @@ StringJs is a library that introduces useful and easy functions to manipulate st
 &nbsp;
 
 ![example workflow](https://github.com/mattiaerli97/stringjs/actions/workflows/main.yml/badge.svg)
+[![codecov](https://codecov.io/gh/mattiaerli97/stringjs/branch/master/graph/badge.svg?token=I5B2S8N1BW)](https://codecov.io/gh/mattiaerli97/stringjs)
 
 &nbsp;
 
