@@ -1,6 +1,6 @@
 {
   "name": "stringjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library that helps manipulate strings in JavaScript, from uppercase to lowercase, via useful features",
   "main": "bundle/bundle.js",
   "scripts": {
@@ -11,10 +11,21 @@
     "run_test_coverage": "jest --coverage && codecov"
   },
   "keywords": [
+    "string",
     "strings",
     "uppercase",
     "lowercase",
-    "javascript"
+    "capitalize",
+    "decapitalize",
+    "javascript",
+    "stringjs",
+    "stringsjs",
+    "js",
+    "parse",
+    "parsing",
+    "formatting",
+    "letter",
+    "letters"
   ],
   "devDependencies": {
     "@babel/preset-env": "^7.13.10",

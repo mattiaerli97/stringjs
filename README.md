@@ -19,7 +19,11 @@ StringJs is a library that introduces useful and easy functions to manipulate st
 
 ## Installation
 
-Installation steps
+<code>npm install --save stringjs</code>
+
+or
+
+<code>yarn add stringjs</code>
 
 &nbsp;
 
