@@ -33,7 +33,13 @@ or
 
 <code>const stringjs = require('stringjs')</code>  
 
-After this import you can use any function provided in the [section below](#Functions-and-Methods) in this way  
+or
+
+<code>import stringjs from 'stringjs'</code>  
+
+&nbsp;
+
+After this import you can use any function provided in the [section below](#Functions-and-Methods) with this call structure  
 
 <code>stringjs.capitalizeFirst()</code>
 
