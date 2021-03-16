@@ -70,17 +70,15 @@ export const checkByIndex = (str, idx, isUppercase) => {
 export const checkAndUpperLower = (str, letter, isUppercase) => {
   let s = '';
   const machLetter = (i) => {
-    let booleanCondition = false;
     if (isString(letter)) {
-      booleanCondition = str[i] === letter;
+      return str[i] === letter;
     } else if (isArray(letter)) {
-      booleanCondition = letter.includes(str[i]);
+      return letter.includes(str[i]);
     } else if (isFunction(letter)) {
-      booleanCondition = letter(str[i]);
+      return letter(str[i]);
     } else {
-      false;
+      return false;
     }
-    return booleanCondition;
   };
   for (let i = 0; i < str.length; i += 1) {
     s += (machLetter(i) ? transformChar(str, i, isUppercase) : str[i]);

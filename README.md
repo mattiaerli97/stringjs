@@ -6,6 +6,8 @@ StringJs is a library that introduces useful and easy functions to manipulate st
 
 ![example workflow](https://github.com/mattiaerli97/stringjs/actions/workflows/main.yml/badge.svg)
 [![codecov](https://codecov.io/gh/mattiaerli97/stringjs/branch/master/graph/badge.svg?token=I5B2S8N1BW)](https://codecov.io/gh/mattiaerli97/stringjs)
+![dependencies](https://status.david-dm.org/gh/mattiaerli97/stringjs.svg)
+![devdependencies](https://status.david-dm.org/gh/mattiaerli97/stringjs.svg?type=dev)
 
 &nbsp;
 
@@ -31,7 +33,13 @@ or
 
 <code>const stringjs = require('stringjs')</code>  
 
-After this import you can use any function provided in the [section below](#Functions-and-Methods) in this way  
+or
+
+<code>import stringjs from 'stringjs'</code>  
+
+&nbsp;
+
+After this import you can use any function provided in the [section below](#Functions-and-Methods) with this call structure  
 
 <code>stringjs.capitalizeFirst()</code>
 
