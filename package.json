@@ -8,7 +8,6 @@
     "url": "https://github.com/mattiaerli97/stringjs.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "rollup": "rollup -c",
     "lint": "eslint",
     "run_test": "jest",

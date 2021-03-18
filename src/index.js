@@ -1,5 +1,5 @@
 import {
-  capitalizeFirst, capitalizeLast, capitalizeByIndex, capitalizeByLetter,
+  capitalizeFirst, capitalizeLast, capitalizeByIndex, capitalizeByLetter, capitalizeWords,
 } from './features/capitalize';
 
 import {
@@ -11,6 +11,7 @@ module.exports = {
   capitalizeLast,
   capitalizeByIndex,
   capitalizeByLetter,
+  capitalizeWords,
   deCapitalizeFirst,
   deCapitalizeLast,
   deCapitalizeByIndex,

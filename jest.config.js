@@ -4,5 +4,5 @@ module.exports = {
   },
   moduleFileExtensions: ['js'],
   testMatch: ['**/*.test.js'],
-  collectCoverage: true
+  collectCoverage: true,
 };

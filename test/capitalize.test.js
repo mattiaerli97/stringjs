@@ -24,13 +24,13 @@ describe('capitalizeByIndex: ', () => {
   });
 
   test('With String and Test Function', () => {
-    expect(capitalizeByIndex('test', (i) => { return i === 2 || i === 3 })).toBe('teST');
+    expect(capitalizeByIndex('test', (i) => i === 2 || i === 3)).toBe('teST');
   });
 
   test('With String and Object (Not Allowed => Returns Input String)', () => {
     expect(capitalizeByIndex('test', {})).toBe('test');
   });
-})
+});
 
 describe('capitalizeByLetter: ', () => {
   test('With String and Integer', () => {
@@ -44,10 +44,10 @@ describe('capitalizeByLetter: ', () => {
   });
 
   test('With String and Test Function', () => {
-    expect(capitalizeByLetter('test', (l) => { return l === 'e' || l === 's' })).toBe('tESt');
+    expect(capitalizeByLetter('test', (l) => l === 'e' || l === 's')).toBe('tESt');
   });
 
   test('With String and Object (Not Allowed => Returns Input String)', () => {
     expect(capitalizeByLetter('test', {})).toBe('test');
   });
-})
+});

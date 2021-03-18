@@ -72,13 +72,12 @@ export const checkAndUpperLower = (str, letter, isUppercase) => {
   const machLetter = (i) => {
     if (isString(letter)) {
       return str[i] === letter;
-    } else if (isArray(letter)) {
+    } if (isArray(letter)) {
       return letter.includes(str[i]);
-    } else if (isFunction(letter)) {
+    } if (isFunction(letter)) {
       return letter(str[i]);
-    } else {
-      return false;
     }
+    return false;
   };
   for (let i = 0; i < str.length; i += 1) {
     s += (machLetter(i) ? transformChar(str, i, isUppercase) : str[i]);
