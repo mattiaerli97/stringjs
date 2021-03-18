@@ -1,6 +1,6 @@
-# StringJs
+# stringjs
 
-StringJs is a library that introduces useful and easy functions to manipulate strings in JavaScript
+<b>stringjs</b> is a library that introduces useful and easy functions to manipulate strings in JavaScript
 
 &nbsp;
 
