@@ -15,23 +15,17 @@ export const capitalizeByIndex = (str, idx) => checkByIndex(str, idx, true);
 
 export const capitalizeByLetter = (str, letter) => checkAndUpperLower(str, letter, true);
 
-export const capitalizeWords = (str, sep, words) => {
+export const capitalizeWords = (str, words, sep) => {
   const separator = sep || ' ';
-  const splitWords = str.split(separator);
+  let splitWords = str.split(separator);
   if (!words) {
-    splitWords.map((v) => {
-      const cap = capitalizeFirst(v);
-      return cap;
-    });
+    splitWords = splitWords.map((v) => capitalizeFirst(v));
   } else if (isString(words)) {
-    splitWords.map((v) => {
-      const cap = v === words ? capitalizeFirst(v) : v;
-      return cap;
-    });
+    splitWords = splitWords.map((v) => v === words && capitalizeFirst(v));
   } else if (isArray(words)) {
-    splitWords.map((v) => (words.includes(v) ? capitalizeFirst(v) : v));
+    splitWords = splitWords.map((v) => words.includes(v) && capitalizeFirst(v));
   } else if (isFunction(words)) {
-    splitWords.map((v) => (words(v) ? capitalizeFirst(v) : v));
+    splitWords = splitWords.map((v) => words(v) && capitalizeFirst(v));
   }
   return splitWords.join(separator);
 };
