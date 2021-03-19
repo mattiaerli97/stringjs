@@ -84,3 +84,40 @@ export const checkAndUpperLower = (str, letter, isUppercase) => {
   }
   return s;
 };
+
+const upperAndLowerWord = (v, isUppercase) => (
+  isUppercase
+    ? sliceAndModifyChar(v, true, true)
+    : sliceAndModifyChar(v, true, false));
+
+export const checkWords = (str, words, sep, isUppercase) => {
+  const separator = sep || ' ';
+  let splitWords = str.split(separator);
+  if (!words) {
+    splitWords = splitWords.map((v) => upperAndLowerWord(v, isUppercase));
+  } else if (isString(words)) {
+    splitWords = splitWords.map((v) => (v === words ? upperAndLowerWord(v, isUppercase) : v));
+  } else if (isArray(words)) {
+    splitWords = splitWords.map((v) => (words.includes(v) ? upperAndLowerWord(v, isUppercase) : v));
+  } else if (isFunction(words)) {
+    splitWords = splitWords.map((v) => (words(v) ? upperAndLowerWord(v, isUppercase) : v));
+  }
+  return splitWords.join(separator);
+};
+
+export const checkWordsByIndex = (str, idx, sep, isUppercase) => {
+  const separator = sep || ' ';
+  let splitWords = str.split(separator);
+  if (!idx) {
+    splitWords = splitWords.map((v) => upperAndLowerWord(v, isUppercase));
+  } if (isNumber(idx)) {
+    splitWords[idx] = upperAndLowerWord(splitWords[idx], isUppercase);
+  } else if (isArray(idx)) {
+    splitWords = splitWords.map((v, i) => (idx.includes(i)
+      ? upperAndLowerWord(v, isUppercase)
+      : v));
+  } else if (isFunction(idx)) {
+    splitWords = splitWords.map((v, i) => (idx(i) ? upperAndLowerWord(v, isUppercase) : v));
+  }
+  return splitWords.join(separator);
+};
