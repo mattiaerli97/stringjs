@@ -176,6 +176,7 @@ stringjs.deCapitalizeWordsByIndex('TEST WORDS', 1) // TEST wORDS
 stringjs.deCapitalizeWordsByIndex('TEST DECAPITALIZE WORDS', [1, 2]) // TEST dECAPITALIZE wORDS
 
 stringjs.deCapitalizeWordsByIndex('TEST DECAPITALIZE WORDS', (i) => { return i > 1 }) // TEST DECAPITALIZE wORDS
+```
 
 &nbsp;
 
