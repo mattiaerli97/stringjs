@@ -86,9 +86,9 @@ describe('deCapitalizeWordsByIndex: ', () => {
     expect(deCapitalizeWordsByIndex('TEST WORDS', 1)).toBe('TEST wORDS');
   });
   test('With String And an Array of Indexes', () => {
-    expect(deCapitalizeWordsByIndex('TEST CAPITALIZE WORDS', [1, 2])).toBe('TEST cAPITALIZE wORDS');
+    expect(deCapitalizeWordsByIndex('TEST DECAPITALIZE WORDS', [1, 2])).toBe('TEST dECAPITALIZE wORDS');
   });
   test('With String And a Function', () => {
-    expect(deCapitalizeWordsByIndex('TEST CAPITALIZE WORDS', (i) => i > 1)).toBe('TEST CAPITALIZE wORDS');
+    expect(deCapitalizeWordsByIndex('TEST DECAPITALIZE WORDS', (i) => i > 1)).toBe('TEST DECAPITALIZE wORDS');
   });
 });
