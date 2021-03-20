@@ -8,6 +8,7 @@
 [![codecov](https://codecov.io/gh/mattiaerli97/stringjs/branch/master/graph/badge.svg?token=I5B2S8N1BW)](https://codecov.io/gh/mattiaerli97/stringjs)
 ![dependencies](https://status.david-dm.org/gh/mattiaerli97/stringjs.svg)
 ![devdependencies](https://status.david-dm.org/gh/mattiaerli97/stringjs.svg?type=dev)
+[![CodeFactor](https://www.codefactor.io/repository/github/mattiaerli97/stringjs/badge)](https://www.codefactor.io/repository/github/mattiaerli97/stringjs)
 
 &nbsp;
 
