@@ -1,5 +1,10 @@
 import {
-  deCapitalizeFirst, deCapitalizeLast, deCapitalizeByIndex, deCapitalizeByLetter,
+  deCapitalizeFirst,
+  deCapitalizeLast,
+  deCapitalizeByIndex,
+  deCapitalizeByLetter,
+  deCapitalizeWords,
+  deCapitalizeWordsByIndex,
 } from '../src/features/decapitalize';
 
 test('deCapitalizeFirst', () => {
@@ -49,5 +54,41 @@ describe('deCapitalizeByLetter: ', () => {
 
   test('With String and Object (Not Allowed => Returns Input String)', () => {
     expect(deCapitalizeByLetter('TEST', {})).toBe('TEST');
+  });
+});
+
+describe('deCapitalizeWords: ', () => {
+  test('With Only The String', () => {
+    expect(deCapitalizeWords('TEST WORDS')).toBe('tEST wORDS');
+  });
+  test('With String And a Separator', () => {
+    expect(deCapitalizeWords('TEST-WORDS', null, '-')).toBe('tEST-wORDS');
+  });
+  test('With String And a Specific Word', () => {
+    expect(deCapitalizeWords('TEST WORDS', 'WORDS')).toBe('TEST wORDS');
+  });
+  test('With String And an Array of Words', () => {
+    expect(deCapitalizeWords('TEST DECAPITALIZE WORDS', ['TEST', 'WORDS'])).toBe('tEST DECAPITALIZE wORDS');
+  });
+  test('With String And a Function', () => {
+    expect(deCapitalizeWords('TEST DECAPITALIZE WORDS', (w) => w.includes('T'))).toBe('tEST dECAPITALIZE WORDS');
+  });
+});
+
+describe('deCapitalizeWordsByIndex: ', () => {
+  test('With Only The String', () => {
+    expect(deCapitalizeWordsByIndex('TEST WORDS')).toBe('tEST wORDS');
+  });
+  test('With String And a Separator', () => {
+    expect(deCapitalizeWordsByIndex('TEST-WORDS', null, '-')).toBe('tEST-wORDS');
+  });
+  test('With String And a Specific Index', () => {
+    expect(deCapitalizeWordsByIndex('TEST WORDS', 1)).toBe('TEST wORDS');
+  });
+  test('With String And an Array of Indexes', () => {
+    expect(deCapitalizeWordsByIndex('TEST CAPITALIZE WORDS', [1, 2])).toBe('TEST cAPITALIZE wORDS');
+  });
+  test('With String And a Function', () => {
+    expect(deCapitalizeWordsByIndex('TEST CAPITALIZE WORDS', (i) => i > 1)).toBe('TEST CAPITALIZE wORDS');
   });
 });

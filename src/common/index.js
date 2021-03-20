@@ -99,7 +99,7 @@ export const checkWords = (str, words, sep, isUppercase) => {
     splitWords = splitWords.map((v) => (v === words ? upperAndLowerWord(v, isUppercase) : v));
   } else if (isArray(words)) {
     splitWords = splitWords.map((v) => (words.includes(v) ? upperAndLowerWord(v, isUppercase) : v));
-  } else if (isFunction(words)) {
+  } else {
     splitWords = splitWords.map((v) => (words(v) ? upperAndLowerWord(v, isUppercase) : v));
   }
   return splitWords.join(separator);
@@ -110,13 +110,13 @@ export const checkWordsByIndex = (str, idx, sep, isUppercase) => {
   let splitWords = str.split(separator);
   if (!idx) {
     splitWords = splitWords.map((v) => upperAndLowerWord(v, isUppercase));
-  } if (isNumber(idx)) {
+  } else if (isNumber(idx)) {
     splitWords[idx] = upperAndLowerWord(splitWords[idx], isUppercase);
   } else if (isArray(idx)) {
     splitWords = splitWords.map((v, i) => (idx.includes(i)
       ? upperAndLowerWord(v, isUppercase)
       : v));
-  } else if (isFunction(idx)) {
+  } else {
     splitWords = splitWords.map((v, i) => (idx(i) ? upperAndLowerWord(v, isUppercase) : v));
   }
   return splitWords.join(separator);

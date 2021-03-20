@@ -1,5 +1,10 @@
 import {
-  capitalizeFirst, capitalizeLast, capitalizeByIndex, capitalizeByLetter,
+  capitalizeFirst,
+  capitalizeLast,
+  capitalizeByIndex,
+  capitalizeByLetter,
+  capitalizeWords,
+  capitalizeWordsByIndex,
 } from '../src/features/capitalize';
 
 test('capitalizeFirst', () => {
@@ -49,5 +54,41 @@ describe('capitalizeByLetter: ', () => {
 
   test('With String and Object (Not Allowed => Returns Input String)', () => {
     expect(capitalizeByLetter('test', {})).toBe('test');
+  });
+});
+
+describe('capitalizeWords: ', () => {
+  test('With Only The String', () => {
+    expect(capitalizeWords('test words')).toBe('Test Words');
+  });
+  test('With String And a Separator', () => {
+    expect(capitalizeWords('test-words', null, '-')).toBe('Test-Words');
+  });
+  test('With String And a Specific Word', () => {
+    expect(capitalizeWords('test words', 'words')).toBe('test Words');
+  });
+  test('With String And an Array of Words', () => {
+    expect(capitalizeWords('test capitalize words', ['test', 'words'])).toBe('Test capitalize Words');
+  });
+  test('With String And a Function', () => {
+    expect(capitalizeWords('test capitalize words', (w) => w.includes('t'))).toBe('Test Capitalize words');
+  });
+});
+
+describe('capitalizeWordsByIndex: ', () => {
+  test('With Only The String', () => {
+    expect(capitalizeWordsByIndex('test words')).toBe('Test Words');
+  });
+  test('With String And a Separator', () => {
+    expect(capitalizeWordsByIndex('test-words', null, '-')).toBe('Test-Words');
+  });
+  test('With String And a Specific Index', () => {
+    expect(capitalizeWordsByIndex('test words', 1)).toBe('test Words');
+  });
+  test('With String And an Array of Indexes', () => {
+    expect(capitalizeWordsByIndex('test capitalize words', [1, 2])).toBe('test Capitalize Words');
+  });
+  test('With String And a Function', () => {
+    expect(capitalizeWordsByIndex('test capitalize words', (i) => i > 1)).toBe('test capitalize Words');
   });
 });
